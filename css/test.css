@@ -1,0 +1,51 @@
+.header{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1{
+    font-size: 1rem;
+}
+
+table{
+    font-size: 10pt;
+}
+
+
+@media screen {
+
+	.wrapper{
+		width: 90%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	input{
+		/*background: lightyellow;*/
+		width: 150px;
+	}
+	nav{
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-bottom: 20px;
+	}
+	th,td{
+		padding: 1px !important;
+		vertical-align: middle;
+		font-weight: bold;
+	}
+    .top-left{
+        /* text-align: left; */
+        float: left;
+        
+    }
+
+    .top-right{
+        /* text-align: right; */
+        float: right;
+    }
+
+    .clear{
+        clear:both;
+    }
+
+}
