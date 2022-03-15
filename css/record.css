@@ -33,19 +33,11 @@ table{
 		vertical-align: middle;
 		font-weight: bold;
 	}
-    .top-left{
-        /* text-align: left; */
-        float: left;
-        
-    }
 
-    .top-right{
-        /* text-align: right; */
-        float: right;
-    }
+	input {
+		float: right;
+	  }
 
-    .clear{
-        clear:both;
-    }
+
 
 }
