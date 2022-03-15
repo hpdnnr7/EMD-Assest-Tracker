@@ -14,7 +14,6 @@ $('document').ready(() => {
                     <td><input id='cost${count}' type='text'/></td>
                     <td><input id='po_no${count}' type='text'/></td>
                     <td><input id='department_division_head${count}' type='text'/></td>
-
 					<td><button type="button" index="${count}" class="btn btn-danger btn-remove">X</button></td>
 				</tr>
 		`;
