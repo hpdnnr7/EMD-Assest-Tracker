@@ -9,6 +9,7 @@ h1{
 
 table{
     font-size: 10pt;
+
 }
 
 
@@ -28,6 +29,8 @@ table{
 		padding: 5px !important;
 		vertical-align: middle;
 		font-weight: bold;
+		
+		
 	}
 
 	input[top]{
@@ -50,8 +53,11 @@ table{
 		display: none;
 		visibility: hidden;
 	}
+	.remark {
+		color: blue;
+		resize: both;
+  		overflow: auto;
+	  }
 
-	
-	
 
 }
