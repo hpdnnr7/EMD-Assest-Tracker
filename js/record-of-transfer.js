@@ -3,6 +3,7 @@ $('document').ready(() => {
 	// Handler to Add New Asset
 	const table = $("#formTable tbody");
 	let count = 1;
+	
 
 	$('#add').click(() => {
 		count++;
@@ -51,7 +52,27 @@ $('document').ready(() => {
 			}
 
 			// TODO: Check for Empty Inputs and Enforce Users to Fill out Fields
-            
+            $('#submit').click(function(){
+				if (assetInfo.asset_tag_no == ''){
+					alert('Input can not be left blank');
+				  }
+				if (manufacturer == ''){  
+					alert('Input can not be left blank');
+				  }
+				if (descriptions == ''){  
+					alert('Input can not be left blank');
+				  }
+				if (costs == ''){  
+					alert('Input can not be left blank');
+				  }  
+				if (po_no == ''){  
+					alert('Input can not be left blank');
+				  }   
+				if (department_division_head == ''){  
+					alert('Input can not be left blank');
+				  }
+				});
+
 			// Add Info to array
 			data.push(assetInfo);
 		}
