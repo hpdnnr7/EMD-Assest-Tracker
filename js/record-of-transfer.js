@@ -1,8 +1,10 @@
 $('document').ready(() => {
+
+
 	
 	// Handler to Add New Asset
 	const table = $("#formTable tbody");
-	const firsttable = $("#firstTable");
+
 	let count = 1;
 	
 
@@ -12,13 +14,11 @@ $('document').ready(() => {
 					<tr index="${count}">
 					<td><input id='asset_tag_no${count}' type='text'/></td>
 					<td><input id='manufacturer_serial_no${count}' type='text'/></td>
-					<td><input id='description${count}' type='text'/></td>
+					<td><input id='description${count}' type='text'</input></td>
                     <td><input id='cost${count}' type='text'/></td>
                     <td><input id='po_no${count}' type='text'/></td>
-                    <td><remark><input id='remarks${count}' type='text'/></remark></td>
+                    <td><input id='remarks${count}' type='text'/></td>
 					<td><button type="button" index="${count}" class="btn btn-danger btn-remove">X</button></td>
-
-
 				</tr>
 		`;
 
@@ -38,6 +38,9 @@ $('document').ready(() => {
 
 	// Handler to Submit Data
 	$('#submit').click(() =>{
+		$('form').on('submit', function(e){
+			e.preventDefault();
+
 		//Checks if all heading information is filled out
 		const date_out = document.getElementById('date_out').value;
 		const department_out = document.getElementById('department_out').value;
@@ -52,7 +55,9 @@ $('document').ready(() => {
 		const resp_in = document.getElementById('resp_in').value;
 		const prop_in = document.getElementById('prop_in').value;
 		const dhead_in = document.getElementById('dhead_in').value;
+
 		
+/*
 		let errorMessage = '';
 		$('#errorDiv').html(errorMessage);
 
@@ -79,7 +84,7 @@ $('document').ready(() => {
 		if ((dhead_out == '') || (dhead_in == '')) {
 			//alert('Department/Division Head section can not be left blank');
 		}
-
+*/
 		//Format all Data into JSON for Submission
 		let data = [];
 
@@ -92,62 +97,80 @@ $('document').ready(() => {
 			// Store all Info from this row
 			let assetInfo = {
 
+				date_out: $(`#date_out${i}`).val(),
+				department_out: $(`#department_out${i}`).val(),
+				division_out: $(`#divison_out${i}`).val(),
+				resp_out: $(`#resp_out${i}`).val(),
+				prop_out: $(`#prop_out${i}`).val(),
+				dhead_out: $(`#dhead_out${i}`).val(),
+				
+				date_in: $(`#date_in${i}`).val(),
+                department_in: $(`#department_in${i}`).val(),
+                division_in: $(`#divison_in${i}`).val(),
+                resp_in: $(`#resp_in${i}`).val(),
+                prop_in: $(`#prop_in${i}`).val(),
+                dhead_in: $(`#dhead_in${i}`).val(),
+
 				asset_tag_no: $(`#asset_tag_no${i}`).val(),
 				manufacturer: $(`#manufacturer_serial_no${i}`).val(),
 				descriptions: $(`#description${i}`).val(),
 				costs: $(`#cost${i}`).val(),
 				po_no: $(`#po_no${i}`).val(),
 				remarks: $(`#remarks${i}`).val(),
-				
 
 			}
 
 
 			// TODO: Check for Empty Inputs and Enforce Users to Fill out Fields
-					
+			/*
 			if (assetInfo.asset_tag_no == '') {
-				//alert('Asset Tag Number can not be left blank');
+				alert('Asset Tag Number can not be left blank');
 			}
 			if (assetInfo.manufacturer == ''){  
-				//alert('Manufacturer Serial Number can not be left blank');
+				alert('Manufacturer Serial Number can not be left blank');
 			}
 			if (assetInfo.descriptions == ''){  
-				//alert('The Description can not be left blank');
+				alert('The Description can not be left blank');
 			}
 			if (assetInfo.costs == ''){  
-				//alert('The Cost can not be left blank');
+				alert('The Cost can not be left blank');
 			}  
 			if (assetInfo.po_no == ''){  
-				//alert('The P.O Number/ Document Number can not be left blank');
+				alert('The P.O Number/ Document Number can not be left blank');
 			}   
 			if (assetInfo.remarks == ''){  
-				//alert('The Remarks can not be left blank');
+				alert('The Remarks can not be left blank');
 			}
+			*/
+			
 
-
-		}
-		
-		
-		if (errorMessage != ''){
-			$('#errorDiv').html(errorMessage);
-			// Code to display error message on page
-		}
-		else{
-			// Submit and show success message
+		/*
+			if (errorMessage != ''){
+				$('#errorDiv').html(errorMessage);
+				// Code to display error message on page
+			}
+			else{
+				// Submit and show success message
+			}
+		*/
+			
+		if (assetInfo.asset_tag_no && assetInfo.manufacturer && assetInfo.descriptions && assetInfo.costs && assetInfo.po_no && assetInfo.remarks  != ''){  
+			data.push(assetInfo);
+			// alert('Submission Accepted');
+			
+			// Add Info to array
 			
 		}
-		if (assetInfo.asset_tag_no && assetInfo.manufacturer && assetInfo.descriptions && assetInfo.costs && assetInfo.po_no && assetInfo.remarks  != ''){  
-			alert('Submission Accepted');
+	
 		
-// Add Info to array
-	data.push(assetInfo);
+			
 		}
-//TODO: Upload JSON to Database
-console.log(data);
-
+	
+		
+	//TODO: Upload JSON to Database
+			
+			console.log(data);
+		});
+	});
 })
 
-
-
-
-})
