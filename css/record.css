@@ -49,17 +49,14 @@ table{
 		font-size: 0.7rem;
 		font-weight: bold;
 	}
-	.bottom{
-		display: none;
-		visibility: hidden;
+	textarea[top]{
+		float: right;
+		width: 150px;
+		
 	}
-	.remark {
-		color: blue;
-		resize: both;
-  		overflow: auto;
-	  }
 
 
+	
 }
 @media print {
 
@@ -80,6 +77,7 @@ table{
 	}
 	tr,td,th{
 		border: 1px solid black;
+		page-break-inside:avoid; page-break-after:auto 
 	}
 	th,td{
 		padding: 1px !important;
@@ -96,5 +94,14 @@ table{
 	.bottom p{
 		margin: 0;
 	}
+	thead{ 
+		display:table-header-group 
+	}
+  	tfoot{ 
+	  display:table-footer-group 
+	}
+	td:last-child {
+		visibility: hidden;
+	  }
 
 }

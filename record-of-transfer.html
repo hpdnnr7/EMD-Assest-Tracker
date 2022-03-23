@@ -25,12 +25,13 @@
 					
                     <h1><b><u>TRANSFER-OUT</u></h1></b>
                     <br>
-					<p><b>Date:</b><input id="dateOUT" type='date' top required /></p> 
-					<p><b>Department:</b><input id='department_out' type='text' top required /></p>
-                    <p><b>Division:</b><input id='division_out' type='text' top required /></p>
-                    <p><b>Resp. Ctr:</b><input type='text' id='resp_out' top required/></p>
-                    <p><b>Property Control Office:</b><input id='prop_out' type='text' top required/></p>
-                    <p><b>Department/Division Head:</b><input id='dhead_out' type='text'top required/></p>
+					<div><p><b>Date:</b><input id="date_out" type='date' top required  /></p></div>
+					<div><p><b><br>Department:</b><input id='department_out'  type='text' top required /></p></div>
+                    <div><p><b><br>Division:</b><textarea id='division_out' type='text' top required ></textarea></p></div>
+                    <div><p><b><br><br><br>Resp. Ctr:</b><input type='text' id='resp_out' top required/></p></div>
+					<div><p><b><br>Location:</b><textarea type='text' id='location_out' top required></textarea></p></div>
+                    <div><p><b><br><br><br>Property Control Office:</b><input id='prop_out' type='text' top required/></p></div>
+                    <div><p><b><br>Department/Division Head:</b><input id='dhead_out' type='text'top required/></p></div>
 
 				</div>
 
@@ -39,12 +40,13 @@
 				<div class="flex-fill">
                     <h1><b><u>TRANSFER-IN</u></h1></b>
                     <br>
-					<p><b>Date:</b><input id='date_in' type='date' top required/></p> 
-					<p><b>Department:</b><input id='department_in' type='text' top required/></p>
-                    <p><b>Division:</b><input id='division_in' type='text' top required/></p>
-                    <p><b>Resp. Ctr:</b><input id='resp_in' type='text'top required/></p>
-                    <p><b>Property Control Office:</b><input id='prop_in' type='text' top required/></p>
-                    <p><b>Department/Division Head:</b><input id='dhead_in' type='text' top required/></p>
+					<div><p><b>Date:</b><input id="date_in" type='date' top required  /></p></div>
+					<div><p><b><br>Department:</b><input id='department_in'  type='text' top required /></p></div>
+                    <div><p><b><br>Division:</b><textarea id='division_in' type='text' top required ></textarea></p></div>
+                    <div><p><b><br><br><br>Resp. Ctr:</b><input type='text' id='resp_in' top required/></p></div>
+					<div><p><b><br>Location:</b><textarea type='text' id='location_in' top required></textarea></p></div>
+                    <div><p><b><br><br><br>Property Control Office:</b><input id='prop_in' type='text' top required/></p></div>
+                    <div><p><b><br>Department/Division Head:</b><input id='dhead_in' type='text'top required/></p></div>
 				</div>
 				<div class="p-2 flex-fill"></div>
 
@@ -52,7 +54,7 @@
 
 
 			<br><br><br>
-			<!-- <div id="errorDiv"></div> -->
+
 			<table class='table' id='formTable'>
 				<tr>
 					<th>Asset Tag No.</th>
@@ -69,8 +71,9 @@
 
 			<button type="button" class="btn btn-outline-primary">SAVE</button>
 			<button  class="btn btn-primary" type="submit" id='submit' >SUBMIT</button>
-		</form>
 			<button type="button" class="btn btn-secondary" onclick="window.print();return false;"/>EXPORT PDF</button>
+		</form>
+			
 		
     		
 			
