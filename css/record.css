@@ -9,7 +9,6 @@ h1{
 
 table{
     font-size: 10pt;
-
 }
 
 
@@ -29,17 +28,51 @@ table{
 		padding: 5px !important;
 		vertical-align: middle;
 		font-weight: bold;
-		
-		
+	}
+	
+	/* Keeps table text centered like on old sheet  */
+	input[bottom]{
+		text-align: center;
 	}
 
+	textarea[bottom] {
+		text-align: center;
+	}
+
+	/* Keeps top info centered like on old sheet  */
 	input[top]{
 		float: right;
 		width: 150px;
+		text-align: center;
+		
+	}
+
+	textarea[division]{
+		font-size: 13px;
+		height: 70px;
+		resize: none;
+		text-align: center;
+	}
+
+	textarea[location]{
+		font-size: 13px;
+		height: 50px;
+		resize: none;
+		text-align: center;
+	}
+
+	textarea[description]{
+		font-size: 13px;
+		height: 65px;
+		resize: none;
+	}
+
+	textarea[remarks]{
+		height: 50px;
+		resize: none;
 	}
 
 	input{
-
 		width: 150px;
 	}
 	.btn-remove{
@@ -49,28 +82,116 @@ table{
 		font-size: 0.7rem;
 		font-weight: bold;
 	}
+
 	textarea[top]{
 		float: right;
-		width: 150px;
-		
+		width: 150px;	
+	}
+	
+	.note{
+		visibility: hidden;
 	}
 
 
 	
 }
 @media print {
+		p {
+		margin-bottom: 0;
+		}
+		
+		.flex-fill div {
+		display: grid;
+		}		
 
-	.wrapper{
+		input {
+			border: none;
+			width: 100px;
+		}
+
+		/* Keeps table text centered like on old sheet  */
+		input[bottom]{
+			text-align: center;
+			border: none;
+		}
+		input[top]{
+			/* float: right; */
+			width: 150px;
+			text-align: left;
+
+			display:inline-block;
+		}
+	
+	
+		/* Keeps top info centered like on old sheet  */
+		
+		textarea[division]{
+			border: none;
+			/* float: right; */
+			/* font-size: 13px;
+			height: 70px;
+			
+			 */
+			 text-align: match-parent;
+			 resize: none;
+			display:inline-block;
+		}
+	
+		textarea[location]{
+			border: none;
+			/* float: right; */
+			font-size: 13px;
+			height: 50px;
+			resize: none;
+			/* text-align: left; */
+
+			display:inline-block;
+		}
+
+		textarea[description]{
+			border: none;
+			text-align: start;
+			height: 65px;
+			resize: none;
+
+			display:inline-block;
+		}
+
+		textarea[remarks]{
+			border: none;
+			text-align: start;
+			/* font-size: 13px; */
+			height: 50px;
+			resize: none;
+
+			display:inline-block;
+		}
+
+		textarea[bottom] {
+			text-align: center;
+		}
+
+		td:last-child {
+			visibility: hidden;
+		}
+		button{
+			visibility: hidden;
+		}
+		.note{
+			visibility: show;
+			font-size: 11px;
+		}
+		
+	}
+
+
+
+	/* .wrapper{
 		width: 100%;
 	}
 
-	button{
-		visibility: hidden;
-	}
-	input{
-		border: none;
-		width: 100px;
-	}
+	
+	
 	table{
 		border: 3px solid black !important;
 		font-size: 10pt;
@@ -91,17 +212,18 @@ table{
 		font-size: 10pt;
 		display: initial;
 	}
+
 	.bottom p{
 		margin: 0;
 	}
 	thead{ 
 		display:table-header-group 
 	}
+
   	tfoot{ 
 	  display:table-footer-group 
-	}
-	td:last-child {
-		visibility: hidden;
-	  }
+	} */
+
+	
 
 }

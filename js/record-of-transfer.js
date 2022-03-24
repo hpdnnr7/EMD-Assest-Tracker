@@ -10,12 +10,12 @@ $('document').ready(() => {
 						
 					<tr index="${count}">
 					<form>
-					<td><input id='asset_tag_no${count}' type='text' required/></td>
-					<td><input id='manufacturer_serial_no${count}' type='text' required/></td>
-					<td><textarea id='description${count}' type='text' required></textarea></td>
-                    <td><input id='cost${count}' type='text' required/></td>
-                    <td><input id='po_no${count}' type='text' required/></td>
-                    <td><textarea id='remarks${count}' type='text' required></textarea></td>
+					<td><input id='asset_tag_no${count}' type='text' value='0946' bottom required /></td>
+					<td><input id='manufacturer_serial_no${count}' type='text' value='1033812' bottom required/></td>
+					<td><textarea id='description${count}' type='text' bottom required description>AUDIOTECNICA- Microphone AT 4050/CMS STUDIO</textarea></td>
+                    <td><input id='cost${count}' type='value' bottom required value='2400'/></td>
+                    <td><input id='po_no${count}' type='text' bottom required value='554-682'/></td>
+                    <td><textarea id='remarks${count}' type='text'  bottom required remarks>In use at Livingston</textarea></td>
 					<td><button type="button" index="${count}" class="btn btn-danger btn-remove">X</button></td>
 					</form>
 				</tr>
