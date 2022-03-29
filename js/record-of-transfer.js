@@ -1,4 +1,12 @@
+
+const getAssetInfo = id => {
+	$.get( "http://localhost:3000/assets/" + id, function( data ) {
+		console.log(data);	
+	});
+}
+
 $('document').ready(() => {
+
 
 	// Handler to Add New Asset
 	const table = $("#formTable tbody");
@@ -10,9 +18,9 @@ $('document').ready(() => {
 						
 					<tr index="${count}">
 					<form>
-					<td><input id='asset_tag_no${count}' type='text' value='0946' bottom required /></td>
+					<td><input id='asset_tag_no${count}' type='text' value='0946' onchange = "getAssetInfo(this.value);" bottom required /></td>
 					<td><input id='manufacturer_serial_no${count}' type='text' value='1033812' bottom required/></td>
-					<td><textarea id='description${count}' type='text' bottom required description>AUDIOTECNICA- Microphone AT 4050/CMS STUDIO</textarea></td>
+					<td><textarea id='description${count}' type='text' bottom required description>AZsaza</textarea></td>
                     <td><input id='cost${count}' type='value' bottom required value='2400'/></td>
                     <td><input id='po_no${count}' type='text' bottom required value='554-682'/></td>
                     <td><textarea id='remarks${count}' type='text'  bottom required remarks>In use at Livingston</textarea></td>
@@ -92,8 +100,16 @@ $('document').ready(() => {
 
 		}
 
+	/*
+	Handler Function on any Asset Tag No. input
+	which will query http://localhost:3000/assets/[asset_tag_no]
+	and return the data if it is found in the database
+	and autofill the rest of the fields
 	
-		
+	Handler function should trigger during event listener for "on value change"
+	*/
+
+
 	if (assetInfo.asset_tag_no && assetInfo.manufacturer && assetInfo.descriptions && assetInfo.costs && assetInfo.po_no && assetInfo.remarks  != ''){  
 		// Add Info to array
 		data.push(assetInfo);

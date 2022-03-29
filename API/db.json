@@ -1,0 +1,101 @@
+{
+	"assets" : [
+		{
+			"description" : "SONY - Camera",
+			"id": "0946",
+			"manufacturer" : "SONY",
+			"serial_no" : "1033812",
+			"location" : "2 Broadway",
+			"cost" : "$2,400",
+			"purchase_date" : null,
+			"po_no" : "554-682",
+			"proc_cd" : null
+		},
+		{
+			"description" : "AUDIOTECNIA - Microphone AT4050/CMS STUDIO",
+			"id": "0949",
+			"manufacturer" : "AUDIOTECNIA",
+			"serial_no" : "N/A",
+			"location" : "2 Broadway",
+			"cost" : "$150",
+			"purchase_date" : null,
+			"po_no" : "N/A",
+			"proc_cd" : null
+		},
+		{
+			"description" : "SONY - DVCAM RECORDER/PLAYER",
+			"id": "0938",
+			"manufacturer" : "SONY",
+			"serial_no" : "23855",
+			"location" : "2 Broadway",
+			"cost" : "$500",
+			"purchase_date" : null,
+			"po_no" : "549-903",
+			"proc_cd" : null
+		},
+		{
+			"description" : "Varizoom - ZOOM & FOCUS",
+			"id": "0954",
+			"manufacturer" : "Varizoom",
+			"serial_no" : "N/A",
+			"location" : "2 Broadway",
+			"cost" : "$250",
+			"purchase_date" : null,
+			"po_no" : "N/A",
+			"proc_cd" : null
+		},
+		{
+			"description" : "SONY - VIDEO MONITOR, TRINITRON",
+			"id": "0952",
+			"manufacturer" : "SONY",
+			"serial_no" : "6012877",
+			"location" : "2 Broadway",
+			"cost" : "$300",
+			"purchase_date" : null,
+			"po_no" : "N/A",
+			"proc_cd" : null
+		},
+		{
+			"description" : "WINSTEAD - WORKSTATION (BLACK)",
+			"id": "0104",
+			"manufacturer" : "WINSTEAD",
+			"serial_no" : "6012877",
+			"location" : "2 Broadway",
+			"cost" : "$2,643",
+			"purchase_date" : null,
+			"po_no" : "N/A",
+			"proc_cd" : null
+		}
+	],
+	
+	"transfers": [
+		{ 
+			"id": 1, 
+			"status" : "in-progress",
+			
+			
+			"transfer_out_date" : "01/28/2021",
+			"transfer_out_department" : "Subways",
+			"transfer_out_division" : "EMD - AFC Program & Information Management",
+			"transfer_out_resp_ctr" : "7415",
+			"transfer_out_location" : "2 Broadway - 26th Floor",
+			"transfer_out_property_control_office" : null,
+			"transfer_out_dept_division_head" : "Sherwin Archer",
+			
+			"transfer_in_date" : "01/28/2021",
+			"transfer_in_department" : "Subways",
+			"transfer_in_division" : "EMD - Operations Support",
+			"transfer_in_resp_ctr" : "7503",
+			"transfer_in_location" : "130 Livingston St - 5th Floor",
+			"transfer_in_property_control_office" : null,
+			"transfer_in_dept_division_head" : "Valdemar Cravo",
+			
+			"assets": [
+				{
+					"asset_tag_no": "0946",
+					"remarks": "In use at Livingston"
+				}
+			]
+		}
+	]
+}
