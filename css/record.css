@@ -97,6 +97,7 @@ table{
 	
 }
 @media print {
+		
 		.break{
 			display:block;
 		}
