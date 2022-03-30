@@ -1,9 +1,29 @@
+// const getAssetInfo = id => {
+// 	$.get( "http://localhost:3000/assets/" + id, function( data ) {
+// 		console.log(data);	
+// 	});
+// }
 
-const getAssetInfo = id => {
-	$.get( "http://localhost:3000/assets/" + id, function( data ) {
-		console.log(data);	
+const getAssetInfo = (assetTag, index) => {
+	// get the table row that this input is in
+	const row = $(`tr [index=${index}]`);
+  
+	$.get("http://localhost:3000/assets/" + assetTag, (data) => {
+	  // find the `.description` element and set it's value 
+	  if (data){
+		$(`#description${index}`).val(data.description);
+	  }
+	  else{
+		$(`#description${index}`).val();
+	  }
+	  console.log(data);
+	  
+  
+	  // find the `.serial-no` element and set it's value 
+  
+	  // ... add more finders and setters based on whatever else you're getting back from the data.
 	});
-}
+};
 
 $('document').ready(() => {
 
@@ -18,12 +38,12 @@ $('document').ready(() => {
 						
 					<tr index="${count}">
 					<form>
-					<td><input id='asset_tag_no${count}' type='text' onchange = "getAssetInfo(this.value);" bottom required /></td>
-					<td><input id='manufacturer_serial_no${count}' type='text' bottom required/></td>
-					<td><textarea id='description${count}' type='text' bottom required description></textarea></td>
+					<td><input class="asset-tag" id='asset_tag_no${count}' type='text' onkeyup = "getAssetInfo(this.value,${count});" bottom required /></td>	
+					<td><input  class="serial-no" id='manufacturer_serial_no${count}' type='text' bottom required/></td>
+					<td><textarea class="description" id='description${count}' type='text' bottom required description></textarea></td>
                     <td><input id='cost${count}' type='value' bottom required/></td>
                     <td><input id='po_no${count}' type='text' bottom required/></td>
-                    <td><textarea id='remarks${count}' type='text'  bottom required remarks></textarea></td>
+                    <td><textarea id='remarks${count}' type='text' bottom required remarks></textarea></td>
 					<td><button type="button" index="${count}" class="btn btn-danger btn-remove">X</button></td>
 					</form>
 				</tr>
