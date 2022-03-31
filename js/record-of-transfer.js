@@ -6,23 +6,35 @@
 
 const getAssetInfo = (assetTag, index) => {
 	// get the table row that this input is in
-	const row = $(`tr [index=${index}]`);
-  
-	$.get("http://localhost:3000/assets/" + assetTag, (data) => {
+	$.get("http://localhost:3000/assets/" + assetTag , (data) => {
 	  // find the `.description` element and set it's value 
 	  if (data){
+		$(`#manufacturer_serial_no${index}`).val(data.serial_no);
 		$(`#description${index}`).val(data.description);
+		$(`#cost${index}`).val(data.cost);
+		$(`#po_no${index}`).val(data.po_no);
 	  }
-	  else{
-		$(`#description${index}`).val();
-	  }
-	  console.log(data);
 	  
-  
-	  // find the `.serial-no` element and set it's value 
-  
-	  // ... add more finders and setters based on whatever else you're getting back from the data.
+	  console.log(data);
+
+	})
+	// .done(()=> alert("DONE"))
+	.fail(() => {
+		// console.log(index);
+		$(`#manufacturer_serial_no${index}`).val("");
+		$(`#description${index}`).val("");
+		$(`#cost${index}`).val("");
+		$(`#po_no${index}`).val("");
 	});
+};
+
+const postAssetInfo = (remarks ,index) => {
+
+	$.post("http://localhost:3000/transfers", (data) =>{
+
+		$(`#remarks${index}`).val(data.remarks);
+	// console.log(data);
+});
 };
 
 $('document').ready(() => {
@@ -38,12 +50,17 @@ $('document').ready(() => {
 						
 					<tr index="${count}">
 					<form>
-					<td><input class="asset-tag" id='asset_tag_no${count}' type='text' onkeyup = "getAssetInfo(this.value,${count});" bottom required /></td>	
-					<td><input  class="serial-no" id='manufacturer_serial_no${count}' type='text' bottom required/></td>
-					<td><textarea class="description" id='description${count}' type='text' bottom required description></textarea></td>
-                    <td><input id='cost${count}' type='value' bottom required/></td>
-                    <td><input id='po_no${count}' type='text' bottom required/></td>
-                    <td><textarea id='remarks${count}' type='text' bottom required remarks></textarea></td>
+					<td><input class="asset-tag" id='asset_tag_no${count}' type='text' 
+					onkeyup = "getAssetInfo(this.value,${count});"
+					onerror="this.setCustomValidity('Asset Tag Number is Invalid')" 
+					
+					bottom required /></td>	
+					
+					<td><input  class="serial-no" id='manufacturer_serial_no${count}' type='text' bottom required readonly/></td>
+					<td><textarea class="description" id='description${count}' type='text' bottom required readonly description></textarea></td>
+                    <td><input id='cost${count}' type='value' bottom require readonly/></td>
+                    <td><input id='po_no${count}' type='text' bottom require readonly/></td>
+                    <td><textarea id='remarks${count}' type='text' bottom remarks></textarea></td>
 					<td><button type="button" index="${count}" class="btn btn-danger btn-remove">X</button></td>
 					</form>
 				</tr>
@@ -130,9 +147,10 @@ $('document').ready(() => {
 	*/
 
 
-	if (assetInfo.asset_tag_no && assetInfo.manufacturer && assetInfo.descriptions && assetInfo.costs && assetInfo.po_no && assetInfo.remarks  != ''){  
+	if (assetInfo.asset_tag_no && assetInfo.manufacturer && assetInfo.descriptions && assetInfo.costs && assetInfo.po_no  != ''){  
 		// Add Info to array
 		data.push(assetInfo);
+		postAssetInfo(this.value)
 		
 			
 	}	
