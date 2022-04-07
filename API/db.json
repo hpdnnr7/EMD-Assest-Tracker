@@ -93,58 +93,39 @@
       ]
     },
     {
+      "date_out": "2021-01-28",
+      "department_out": "Subways",
+      "division_out": "EMD - AFC Program & Information Management",
+      "resp_out": "7415",
+      "location_out": "2 Broadway - 26th Floor",
+      "prop_out": "9999",
+      "dhead_out": "Sherwin Archer",
+      "date_in": "2021-01-28",
+      "department_in": "Subways",
+      "division_in": "EMD - Operations Support",
+      "resp_in": "7503",
+      "location_in": "130 Livingston St - 5th Floor",
+      "prop_in": "9999",
+      "dhead_in": "Valdemar Cravo",
+      "assets": [
+        {
+          "asset_tag_no": "0949",
+          "manufacturer": "N/A",
+          "descriptions": "AUDIOTECNIA - Microphone AT4050/CMS STUDIO",
+          "costs": "$150",
+          "po_no": "N/A",
+          "remarks": ""
+        },
+        {
+          "asset_tag_no": "0952",
+          "manufacturer": "6012877",
+          "descriptions": "SONY - VIDEO MONITOR, TRINITRON",
+          "costs": "$300",
+          "po_no": "N/A",
+          "remarks": ""
+        }
+      ],
       "id": 2
-    },
-    {
-      "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "id": 11
-    },
-    {
-      "id": 12
-    },
-    {
-      "id": 13
-    },
-    {
-      "id": 14
-    },
-    {
-      "id": 15
-    },
-    {
-      "id": 16
-    },
-    {
-      "id": 17
-    },
-    {
-      "id": 18
-    },
-    {
-      "id": 19
     }
   ]
 }
