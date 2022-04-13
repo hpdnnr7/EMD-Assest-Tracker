@@ -6,7 +6,7 @@ During my current internship, I have worked to create an asset tracker for the M
 * The Database 
 To hold all the incoming assests for the Emergency Maintenance Department. 
 
-<img src="main_screen.png">
+<img src="Images/main_screen.png">
 
 In order to submit any sort of data in the form, all parts of the form are required and must be completed and filled out.
 
@@ -18,5 +18,5 @@ Some functionalities include a:
 * A remove button to delete rows
 * An Add New Asset button which can add a blank row to the table 
 
-<img src="buttons.png">
-<img src="export.png">
+<img src="Images/buttons.png">
+<img src="Images/export.png">
