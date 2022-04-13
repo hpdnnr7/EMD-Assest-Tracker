@@ -19,3 +19,4 @@ Some functionalities include a:
 * An Add New Asset button which can add a blank row to the table 
 
 <img src="buttons.png">
+<img src="export.png">
