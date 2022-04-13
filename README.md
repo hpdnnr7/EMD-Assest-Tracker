@@ -10,7 +10,7 @@ To hold all the incoming assests for the Emergency Maintenance Department.
 
 In order to submit any sort of data in the form, all parts of the form are required and must be completed and filled out.
 
-Some functionalities include a; 
+Some functionalities include a: 
 
 * A Save button which updates/patches the users information when a new row is added
 * A Submit button which updates the system to be approved by a different authorized user
