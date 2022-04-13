@@ -9,6 +9,7 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="./js/record-of-transfer.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	 
 
 	<body>
 		<nav class="navbar navbar-dark bg-dark">
@@ -23,7 +24,7 @@
 			<form>
 			<div class="d-flex justify-content-center">
 				<div class="p-2 flex-fill"></div>
-				<div class="flex-fill" class="median">
+				<div class="flex-fill">
 					
                     <h2><b><u>TRANSFER-OUT</u></h1></b>
                     <br>
@@ -31,7 +32,7 @@
 					<div><p><b><br>Department:</b><input id='department_out'  type='text' value="Subways" top required /></p></div>
                     <div><p><b><br>Division:</b><textarea id='division_out' type='text' top required division>EMD - AFC Program & Information Management</textarea></p></div>
                     <div><p><b><br><br><br>Resp. Ctr:</b><input  type='text' id='resp_out' value="7415" top required/></p></div>
-					<div ><p><b><br>Location:</b><textarea class="mydiv" type='text' id='location_out' top required location>2 Broadway - 26th Floor</textarea></p></div>
+					<div ><p><b><br>Location:</b><textarea type='text' id='location_out' top required location>2 Broadway - 26th Floor</textarea></p></div>
                     <div><p><b><br><br>Property Control Office:</b><input id='prop_out' type='text' value="9999" top required/></p></div>
                     <div><p><b><br>Department/Division Head:</b><input id='dhead_out' type='text' value="Sherwin Archer" top required/></p></div>
 
@@ -45,7 +46,7 @@
 					<div><p><b><br>Department:</b><input id='department_in' type='text' value="Subways" top required /></p></div>
                     <div><p><b><br>Division:</b><textarea id='division_in' type='text' top required division>EMD - Operations Support</textarea></p></div>
                     <div><p><b><br><br><br>Resp. Ctr:</b><input type='text' id='resp_in' value="7503" top required/></p></div>
-					<div ><p><b><br>Location:</b><textarea type='text' id='location_in' top required location>130 Livingston St - 5th Floor</textarea></p></div>
+					<div><p><b><br>Location:</b><textarea type='text' id='location_in' top required location>130 Livingston St - 5th Floor</textarea></p></div>
                     <div><p><b><br><br>Property Control Office:</b><input id='prop_in' type='text' value="9999" top required/></p></div>
                     <div><p><b><br>Department/Division Head:</b><input id='dhead_in' type='text'value="Valdemar Cravo" top required/></p></div>
 				</div>
@@ -58,17 +59,19 @@
 
 			<table class='table' id='formTable'>
 				<tr>
-					<th>Asset Tag No.</th>
+					<th>&emsp;&emsp;Asset Tag No.</th>
 					<th>Manufacturer Serial No.</th>
 					<th>&emsp;&emsp;&ensp; Description</th>
-					<th>Cost/ Est. Cost</th>
-					<th>P.O. No/Doc. No.</th>
+					<th>&emsp;&thinsp;&thinsp;Cost/ Est. Cost</th>
+					<th>&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;&thinsp;P.O. No/Doc. No.</th>
 					<th>&emsp;&emsp;&emsp;&ensp; Remarks</th>
 				</tr>
 			</table>
+
 			
-			<button type="button" class="btn btn-outline-primary" id='add' >+ Add New Asset</button>
 			<div class="note"><p><b>The department receiving the equipment should complete the transfer-in section and return the originating department to acknowledge receipt of the furniture/equipment. </b></div>
+			<button type="button" class="btn btn-outline-primary" id='add' >+ Add New Asset</button> 
+			<br><br><br>
 
 			<button type="button" class="btn btn-outline-primary" id='save'>SAVE</button>
 			<button  class="btn btn-primary" type="submit" id='submit' >SUBMIT</button>

@@ -90,12 +90,16 @@ table{
 	
 	.note{
 		visibility: hidden;
+		display:none;
 	}
 
 
 	
 }
 @media print {
+		th{
+			font-size: 12.4px;
+		}
 		
 		.break{
 			display:block;
@@ -198,6 +202,7 @@ table{
 		.note{
 			visibility: show;
 			font-size: 11px;
+
 		}
 		
 	}
