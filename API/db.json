@@ -70,15 +70,15 @@
   "transfers": [
     {
       "id": 1,
-      "status": "in-progress",
-      "transfer_out_date": "01/28/2021",
+      "status": "In-Progress",
+      "transfer_out_date": "2021-01-08",
       "transfer_out_department": "Subways",
       "transfer_out_division": "EMD - AFC Program & Information Management",
       "transfer_out_resp_ctr": "7415",
       "transfer_out_location": "2 Broadway - 26th Floor",
       "transfer_out_property_control_office": null,
       "transfer_out_dept_division_head": "Sherwin Archer",
-      "transfer_in_date": "01/28/2021",
+      "transfer_in_date": "2021-01-08",
       "transfer_in_department": "Subways",
       "transfer_in_division": "EMD - Operations Support",
       "transfer_in_resp_ctr": "7503",
@@ -87,10 +87,74 @@
       "transfer_in_dept_division_head": "Valdemar Cravo",
       "assets": [
         {
-          "asset_tag_no": "0946",
-          "remarks": "In use at Livingston"
+          "asset_tag_no": "0954",
+          "manufacturer": "N/A",
+          "descriptions": "Varizoom - ZOOM & FOCUS",
+          "costs": "$250",
+          "po_no": "N/A",
+          "remarks": ""
+        },
+        {
+          "asset_tag_no": "0952",
+          "manufacturer": "6012877",
+          "descriptions": "SONY - VIDEO MONITOR, TRINITRON",
+          "costs": "$300",
+          "po_no": "N/A",
+          "remarks": ""
         }
-      ]
+      ],
+      "date_out": "2021-01-28",
+      "department_out": "Subways",
+      "division_out": "EMD - AFC Program & Information Management",
+      "resp_out": "7415",
+      "location_out": "2 Broadway - 26th Floor",
+      "prop_out": "9999",
+      "dhead_out": "Sherwin Archer",
+      "date_in": "2021-01-28",
+      "department_in": "Subways",
+      "division_in": "EMD - Operations Support",
+      "resp_in": "7503",
+      "location_in": "130 Livingston St - 5th Floor",
+      "prop_in": "9999",
+      "dhead_in": "Valdemar Cravo"
+    },
+    {
+      "id": 2,
+      "status": "In-Progress",
+      "transfer_out_date": "2022-01-01",
+      "transfer_out_department": "TEST1",
+      "transfer_out_division": "TEST1",
+      "transfer_out_resp_ctr": "TEST1",
+      "transfer_out_location": "TEST1",
+      "transfer_out_property_control_office": "TEST1",
+      "transfer_out_dept_division_head": "TEST1",
+      "transfer_in_date": "2022-01-01",
+      "transfer_in_department": "TEST1",
+      "transfer_in_division": "TEST1",
+      "transfer_in_resp_ctr": "TEST1",
+      "transfer_in_location": "TEST1",
+      "transfer_in_property_control_office": "TEST1",
+      "transfer_in_dept_division_head": "TEST1",
+      "assets": []
+    },
+    {
+      "id": 3,
+      "status": "Awaiting Approval",
+      "transfer_out_date": "2022-02-02",
+      "transfer_out_department": "TEST2",
+      "transfer_out_division": "TEST2",
+      "transfer_out_resp_ctr": "TEST2",
+      "transfer_out_location": "TEST2",
+      "transfer_out_property_control_office": "TEST2",
+      "transfer_out_dept_division_head": "TEST2",
+      "transfer_in_date": "2022-02-02",
+      "transfer_in_department": "TEST2",
+      "transfer_in_division": "TEST2",
+      "transfer_in_resp_ctr": "TEST2",
+      "transfer_in_location": "TEST2",
+      "transfer_in_property_control_office": "TEST2",
+      "transfer_in_dept_division_head": "TEST2",
+      "assets": []
     },
     {
       "date_out": "2021-01-28",
@@ -117,78 +181,7 @@
           "remarks": ""
         }
       ],
-      "id": 2
-    },
-    {
-      "date_out": "2021-01-28",
-      "department_out": "Subways",
-      "division_out": "EMD - AFC Program & Information Management",
-      "resp_out": "7415",
-      "location_out": "2 Broadway - 26th Floor",
-      "prop_out": "9999",
-      "dhead_out": "Sherwin Archer",
-      "date_in": "2021-01-28",
-      "department_in": "Subways",
-      "division_in": "EMD - Operations Support",
-      "resp_in": "7503",
-      "location_in": "130 Livingston St - 5th Floor",
-      "prop_in": "9999",
-      "dhead_in": "Valdemar Cravo",
-      "assets": [
-        {
-          "asset_tag_no": "0949",
-          "manufacturer": "N/A",
-          "descriptions": "AUDIOTECNIA - Microphone AT4050/CMS STUDIO",
-          "costs": "$150",
-          "po_no": "N/A",
-          "remarks": "test"
-        },
-        {
-          "asset_tag_no": "0952",
-          "manufacturer": "6012877",
-          "descriptions": "SONY - VIDEO MONITOR, TRINITRON",
-          "costs": "$300",
-          "po_no": "N/A",
-          "remarks": "test"
-        },
-        {
-          "asset_tag_no": "0946",
-          "manufacturer": "1033812",
-          "descriptions": "SONY - Camera",
-          "costs": "$2,400",
-          "po_no": "554-682",
-          "remarks": "test"
-        }
-      ],
-      "status": "awaiting approval",
-      "id": 3
-    },
-    {
-      "date_out": "2021-01-28",
-      "department_out": "Subways",
-      "division_out": "EMD - AFC Program & Information Management",
-      "resp_out": "7415",
-      "location_out": "2 Broadway - 26th Floor",
-      "prop_out": "9999",
-      "dhead_out": "Sherwin Archer",
-      "date_in": "2021-01-28",
-      "department_in": "Subways",
-      "division_in": "EMD - Operations Support",
-      "resp_in": "7503",
-      "location_in": "130 Livingston St - 5th Floor",
-      "prop_in": "9999",
-      "dhead_in": "Valdemar Cravo",
-      "assets": [
-        {
-          "asset_tag_no": "0954",
-          "manufacturer": "N/A",
-          "descriptions": "Varizoom - ZOOM & FOCUS",
-          "costs": "$250",
-          "po_no": "N/A",
-          "remarks": "test2"
-        }
-      ],
-      "status": "awaiting approval",
+      "status": "In-Progress",
       "id": 4
     }
   ]

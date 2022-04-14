@@ -24,52 +24,99 @@ const getAssetInfo = (assetTag, index) => {
         $(`#po_no${index}`).val("");
         }
     });
-// } else {
-//  	console.log('not enough characters to call API endpoint');
-// 	}
 };
 	
-//   });
-    
 
 
 
 $('document').ready(() => {
-    
+    let CURRENT_ID;
+    let CURRENT_STATUS = 'In-Progress';
 
     // Handler to Add New Asset
     const table = $("#formTable tbody");
     let count = 1; 
 
     // TODO: Set variable values from dashboard screen
-    let CURRENT_ID;
-    let CURRENT_STATUS = 'in-progress';
+    const id = new URLSearchParams(window.location.search).get('id');
+    // If we have ID in the URL
+    if (id){
+        $.get(`http://localhost:3000/transfers/${id}`)
+        .done(data => {
+            CURRENT_ID = id;
+            CURRENT_STATUS = data.status;
+            // Autofill Fields here
+            setInitialFields(data);
+            console.log(data.assets);
+            setTableFields(data.assets);
+        })
+        .fail(() =>{
+            console.log("Failed");
+        });
+
+    }
+    //Query transfers/id to get the information to autofill
+
+    const setTableFields = 
+    assets =>{
+        assets.forEach(x => {
+            addRow(x);
+            getAssetInfo(x.asset_tag_no, count-1);
+        });
+            //$(assets).val(data.asset_tag_no);
+     
+        }
+   
+    const setInitialFields = 
+    data =>{
+        $(transfer_out_date).val(data.transfer_out_date);
+        $(transfer_out_department).val(data.transfer_out_department);
+        $(transfer_out_division).val(data.transfer_out_division);
+        $(transfer_out_resp_ctr).val(data.transfer_out_resp_ctr);
+        $(transfer_out_location).val(data.transfer_out_location);
+        $(transfer_out_property_control_office).val(data.transfer_out_property_control_office);
+        $(transfer_out_dept_division_head).val(data.transfer_out_dept_division_head);
+
+        
+        $(transfer_in_date).val(data.transfer_in_date);
+        $(transfer_in_department).val(data.transfer_in_department);
+        $(transfer_in_division).val(data.transfer_in_division);
+        $(transfer_in_resp_ctr).val(data.transfer_in_resp_ctr);
+        $(transfer_in_location).val(data.transfer_in_location);
+        $(transfer_in_property_control_office).val(data.transfer_in_property_control_office);
+        $(transfer_in_dept_division_head).val(data.transfer_in_dept_division_head);
+    };
 
     const getInfo = () =>{
         let data = {
-            date_out: $(date_out).val(),
-            department_out: $(department_out).val(),
-            division_out: $(division_out).val(),
-            resp_out: $(resp_out).val(),
-            location_out: $(location_out).val(),
-            prop_out: $(prop_out).val(),
-            dhead_out: $(dhead_out).val(),
+            transfer_out_date: $(transfer_out_date).val(),
+            transfer_out_department: $(transfer_out_department).val(),
+            transfer_out_dept_division: $(transfer_out_dept_division).val(),
+            transfer_out_resp_ctr: $(transfer_out_resp_ctr).val(),
+            transfer_out_location: $(transfer_out_location).val(),
+            transfer_out_property_control_office: $(transfer_out_property_control_office).val(),
+            transfer_out_dept_division_head: $(transfer_out_dept_division_head).val(),
+
             
-            date_in: $(date_in).val(),
-            department_in: $(department_in).val(),
-            division_in: $(division_in).val(),
-            resp_in: $(resp_in).val(),
-            location_in: $(location_in).val(),
-            prop_in: $(prop_in).val(),
-            dhead_in: $(dhead_in).val(),
+            transfer_in_date: $(transfer_in_date).val(),
+            transfer_in_department: $(transfer_in_department).val(),
+            transfer_in_dept_division: $(transfer_in_dept_division).val(),
+            transfer_in_resp_ctr: $(transfer_in_resp_ctr).val(),
+            transfer_in_location: $(transfer_in_location).val(),
+            transfer_in_property_control_office: $(transfer_in_property_control_office).val(),
+            transfer_in_dept_division_head: $(transfer_in_dept_division_head).val(),
         };
 
+
         let assets = [];
+
         // Iterate over all rows and store data
         for (let i = 1; i <= count; i++){
 
             // Skip Row if it was Removed
             if (!$(`tr[index=${i}]`).length) continue;
+
+            
 
             // Store all Info from this row
             let assetInfo = {
@@ -129,41 +176,46 @@ $('document').ready(() => {
         }
     }
 
-    $('#add').click(() => {
-        
-        //oninvalid="this.setCustomValidity('Asset Tag Number is Invalid')"
+    const addRow = info => {
         const newRow = `
         
         
                         
-                    <tr index="${count}">
-                    <form>
-				
+        <tr index="${count}">
+        <form>
+    
 
-                    <td><input 
-                    class="asset-tag" id='asset_tag_no${count}' type='text' 
-					
-                    onkeyup = "getAssetInfo(this.value,${count})";
+        <td><input ${info ? 'value =' + info.asset_tag_no : ""}
+        class="asset-tag" id='asset_tag_no${count}' type='text' 
         
-                    bottom required /></td> 
-                    <td><input  class="serial-no" id='manufacturer_serial_no${count}' type='text' bottom required readonly/></td>
-                    <td><textarea class="description" id='description${count}' type='text' bottom required readonly description></textarea></td>
-                    <td><input id='cost${count}' type='value' bottom require readonly/></td>
-                    <td><input id='po_no${count}' type='text' bottom require readonly/></td>
-                    <td><textarea id='remarks${count}' type='text' bottom remarks></textarea></td>
-                    <td><button type="button" index="${count}" class="btn btn-danger btn-remove">X</button></td>
-                    </form>
-                </tr>
+        onkeyup = "getAssetInfo(this.value,${count})";
+
+        bottom required /></td> 
+        <td><input class="serial-no" id='manufacturer_serial_no${count}' type='text' bottom required readonly/></td>
+        <td><textarea class="description" id='description${count}' type='text' bottom required readonly description></textarea></td>
+        <td><input id='cost${count}' type='value' bottom require readonly/></td>
+        <td><input id='po_no${count}' type='text' bottom require readonly/></td>
+        <td><textarea id='remarks${count}' type='text' bottom remarks></textarea></td>
+        <td><button type="button" index="${count}" class="btn btn-danger btn-remove">X</button></td>
+        </form>
+        </tr>
         `;
 
         table.append(newRow);
         // Handler to Remove New Asset
         $('.btn-remove').click(function(){
-            let index = $(this).attr('index');
-            $(`tr[index='${index}'`).remove();
+        let index = $(this).attr('index');
+        $(`tr[index='${index}'`).remove();
         });
 
         count++;
+
+    }
+
+    $('#add').click(() => {
+        addRow();
+        //oninvalid="this.setCustomValidity('Asset Tag Number is Invalid')"
+        
     });
 
     
@@ -192,7 +244,7 @@ $('document').ready(() => {
     $('form').on('submit', function(e){
 
         // Set Status to "awaiting approval"
-        CURRENT_STATUS = 'awaiting approval';
+        CURRENT_STATUS = 'Awaiting Approval';
 
         e.preventDefault();
 

@@ -1,0 +1,225 @@
+:root{
+	--main-gradient: linear-gradient(135deg, #9921e8 0%, #5f72be 74%);
+}
+*{
+	font-family: 'Outfit', sans-serif;
+}
+
+html, body{
+	background: #f8f8ff;
+	color: #36454f;
+}
+header{
+	height: 75px;
+	background: var(--main-gradient);
+	display: flex;
+	align-items: center;
+	box-shadow: 0px 2px 20px rgba(0,0,0,0.5);
+	color: white;
+}
+
+header>.container{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo{
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+.icons{
+	font-weight: bold;
+	font-size: 1rem;
+	display: flex;
+	align-items: center;
+}
+.icons i{
+	padding-left: 20px;
+	padding-right: 10px;
+	font-size: 1.5rem;
+	position: relative;
+}
+
+.avatar{
+	display: flex;
+	align-items: center;
+}
+
+.notifications:not([data-notifications="0"]) i::after{
+	content: '';
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: red;
+	position: absolute;
+	right: 8px;
+	top: 3px;
+}
+.notifications:hover, .avatar:hover{
+	opacity: 0.6;
+	cursor: pointer;
+}
+
+.wrapper{
+	padding-top: 50px;
+}
+
+.welcome{
+	font-weight: bold;
+	font-size: 2rem;
+}
+
+.open-requests, .create-requests{
+	margin-top: 50px;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0px 2px 10px #c4c3d0;
+}
+
+.requests-header, .table-container{
+	background: white;
+	padding: 10px 20px;
+}
+.requests-header{
+	background: white;
+	font-weight: bold;
+	font-size: 1.25rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.arrow-icon{
+	transition: 0.3s;
+}
+
+.requests-header:hover{
+	cursor: pointer;
+}
+.requests-header.collapsed .arrow-icon{
+	transform: rotate(180deg);
+}
+.table-container{
+
+}
+
+.table{
+	background: white;
+	color: #777696;
+}
+
+.btn-primary{
+	border-radius: 50px;
+	background:  var(--main-gradient);
+	border: none;
+	padding: 5px;
+	width: 150px;
+}
+.btn-primary:active, .btn-primary:focus{
+	outline: none;
+	box-shadow: none;
+}
+.btn-primary:hover{
+	opacity: 0.6;
+}
+
+td{
+	vertical-align: middle;
+}
+
+.table-accent td{
+	border: none;
+	height: 3px;
+	padding: 0;
+	background:  var(--main-gradient);
+}
+
+.table > :not(:first-child) {
+	border-top: none;
+}
+
+td:last-child{
+	text-align: right;
+}
+
+td.request-status{
+	position: relative;
+}
+
+td.request-status::before{
+	content: '';
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	position: absolute;
+	left: -17px;
+	top: 18px;
+}
+
+td.request-status[data-status="In-Progress"]::before{
+	background: #3cd070;
+}
+
+td.request-status[data-status="Awaiting Approval"]::before{
+	background: #ffe135;
+}
+
+.request-button{
+	font-size: 1.25rem;
+	font-weight: bold;
+    width: 200px;
+    height: 200px;
+    background: white;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+	border: 1px soild transparent;
+	border-radius: 30px;
+	background-image: linear-gradient(white, white), 
+					var(--main-gradient);
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+	transition: 0.2s;
+	margin: 20px;
+
+}
+
+.create-requests-list{
+	background: white;
+	display: flex;
+	justify-content: space-around;
+	
+}
+
+.request-button i{
+	font-size: 3rem;
+	transition: 0.2s;
+	color: transparent;
+	background: var(--main-gradient);
+	background-clip:text;
+	-webkit-background-clip: text;
+	
+}
+
+.request-button:hover{
+	background: var(--main-gradient);
+	color: white;
+	cursor: pointer;
+}
+.request-button:hover i{
+	font-size: 4rem;
+	color: white;
+}
+
+a{
+	color: currentColor;
+	text-decoration: none;
+}
+
+a:hover{
+	color: currentColor;
+}
