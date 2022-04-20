@@ -101,9 +101,9 @@ header>.container{
 .requests-header.collapsed .arrow-icon{
 	transform: rotate(180deg);
 }
-.table-container{
+/* .table-container{
 
-}
+} */
 
 .table{
 	background: white;

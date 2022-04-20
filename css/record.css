@@ -1,3 +1,4 @@
+
 .header{
     text-align: center;
     margin-bottom: 50px;
@@ -97,6 +98,30 @@ table{
 	
 }
 @media print {
+		@page {
+			size: landscape;
+			margin: 10;
+			background-image: none;
+		}
+		.align{
+			text-align: justify-content-left;
+		}
+		.header{
+			margin-bottom: 15px;
+		}
+	
+		tr {
+			display: table-header-group;
+			text-align: center;
+		}
+		
+		element.style {
+			width: 90%;
+		}
+		input, textarea {
+			width: 90%;
+		}
+
 		th{
 			font-size: 12.4px;
 		}
@@ -131,6 +156,10 @@ table{
 		input {
 			border: none;
 			width: 100px;
+			overflow: hidden;
+		}
+		#transfer_out_division{
+			pointer-events: none;
 		}
 
 		/* Keeps table text centered like on old sheet  */
@@ -151,16 +180,21 @@ table{
 			padding:0; 
 			border:none; 
 			display:block;
+			overflow: hidden;
 		}
 		
+
 		textarea[division]{
+			overflow: hidden;
 			border: none;
 			margin:0; 
 			padding:0; 
 			margin-bottom: 0;
+			white-space: nowrap;
 			resize: none;
 			display:block;
-		}
+			font-size: 10px;
+		} 
 	
 		textarea[location]{
 			border: none;
@@ -202,6 +236,11 @@ table{
 		.note{
 			visibility: show;
 			font-size: 11px;
+			margin: 0;
+			padding: 0;
+			height: 0;
+			line-height: 0;
+			clear: both;
 
 		}
 		

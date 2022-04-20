@@ -91,7 +91,7 @@ $('document').ready(() => {
         let data = {
             transfer_out_date: $(transfer_out_date).val(),
             transfer_out_department: $(transfer_out_department).val(),
-            transfer_out_dept_division: $(transfer_out_dept_division).val(),
+            transfer_out_dept_division_head: $(transfer_out_dept_division_head).val(),
             transfer_out_resp_ctr: $(transfer_out_resp_ctr).val(),
             transfer_out_location: $(transfer_out_location).val(),
             transfer_out_property_control_office: $(transfer_out_property_control_office).val(),
@@ -100,7 +100,7 @@ $('document').ready(() => {
             
             transfer_in_date: $(transfer_in_date).val(),
             transfer_in_department: $(transfer_in_department).val(),
-            transfer_in_dept_division: $(transfer_in_dept_division).val(),
+            transfer_in_dept_division_head: $(transfer_in_dept_division_head).val(),
             transfer_in_resp_ctr: $(transfer_in_resp_ctr).val(),
             transfer_in_location: $(transfer_in_location).val(),
             transfer_in_property_control_office: $(transfer_in_property_control_office).val(),
@@ -242,6 +242,7 @@ $('document').ready(() => {
     // 1. Take POST and PATCH from Save Button out and put in its own function so you can call it here
     // 2. Be mindful of if CURRENT_ID is set already or not
     $('form').on('submit', function(e){
+        let data = getInfo();
 
         // Set Status to "awaiting approval"
         CURRENT_STATUS = 'Awaiting Approval';
@@ -258,3 +259,9 @@ $('document').ready(() => {
 
     
 })
+/*
+    1. Dont display Banner at top when printing
+    2. Get fields at top of page onto same line
+    3. Resize Table (changing font size, adjusting width of textarea and input to 90%, etc)
+
+*/
