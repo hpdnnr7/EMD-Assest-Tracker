@@ -97,6 +97,10 @@ table{
 	
 }
 @media print {
+		.navbar-brand{
+			visibility: collapse;
+			display:none;
+		}
 		@page {
 			size: landscape;
 			margin: 10;
@@ -202,7 +206,7 @@ table{
 			overflow: hidden;
 		}
 	
-		input[division] {
+		textarea[division] {
 			overflow: hidden;
 			border: none;
 			margin: 0;
@@ -225,7 +229,7 @@ table{
 			display:block;
 		}
 
-		input[description]{
+		textarea[description]{
 			border: none;
 			text-align: start;
 			height: 40px;
@@ -255,12 +259,14 @@ table{
 		}
 		.note{
 			visibility: show;
-			font-size: 11px;
-			margin: 0;
+			font-size: 12px;
+			margin: -7px;
 			padding: 0;
 			height: 0;
 			line-height: 0;
 			clear: both;
+			text-align: center;
+	
 		}
 		
 	}
