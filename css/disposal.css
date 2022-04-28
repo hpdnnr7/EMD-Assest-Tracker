@@ -1,0 +1,20 @@
+.header{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+h1, h2{
+    font-size: 1rem;
+}
+
+
+/* table{
+    font-size: 10pt;
+} */
+
+
+@media screen {
+    input{
+        text-align: center;
+    } 
+}

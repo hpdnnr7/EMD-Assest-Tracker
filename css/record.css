@@ -97,9 +97,13 @@ table{
 	
 }
 @media print {
-		.navbar-brand{
-			visibility: collapse;
-			display:none;
+	html, body {
+        height: 99%;    
+    }
+		.navbar{
+			content-visibility: hidden;
+			display:none !important;
+			padding: 0px;
 		}
 		@page {
 			size: landscape;
@@ -172,13 +176,13 @@ table{
 			max-width: unset !important;
 			width: unset !important;
 			
-			background-color: blueviolet !important;
+			/* background-color: blueviolet !important; */
 		}
 		.field-container p.container>input{
 			width: unset !important;
 			min-width: unset !important;
 			flex-grow: 1 !important;
-			background-color: rgb(26, 160, 43) !important;
+			/* background-color: rgb(26, 160, 43) !important; */
 		}
 		
 		
@@ -255,20 +259,28 @@ table{
 			visibility: hidden;
 		}
 		button{
-			visibility: hidden;
+			display: none !important;
+			
 		}
 		.note{
+			position: absolute;
+			bottom: 0px;
+			width: 100%;
 			visibility: show;
 			font-size: 12px;
-			margin: -7px;
-			padding: 0;
+			/* margin: -4px;
+			padding: -100%;
 			height: 0;
 			line-height: 0;
 			clear: both;
+			page-break-inside: avoid;  */
 			text-align: center;
-	
+			
 		}
 		
+		table{
+			margin-bottom: 0 !important;
+		}
 	}
 
 	/*
