@@ -7,13 +7,13 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<link rel="stylesheet" href="./css/disposal.css" />
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script src="./js/record-of-disposal.js"></script>
+	<script src="./js/./disposal.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	 
 
 	<body>
 		<nav class="navbar navbar-dark bg-dark">
-	 		<a class="navbar-brand" href="#">EMD DISPOSAL FORM</a>
+	 		<a class="navbar-brand" href="#" class="flex">EMD DISPOSAL FORM</a>
 		</nav>
 		
 		<div class="wrapper">
@@ -22,38 +22,67 @@
 				<h1>NEW YORK CITY TRANSIT<br class="break">FURNITURE AND EQUIPMENT<br class="break">RECORD OF DISPOSAL<br> SALES/SCRAP/TRADE-IN</h1>
 			</div>
             
-
-                <form>
-                    <div class="d-flex justify-content-center">
-                        <div class="p-2 flex-fill"></div>
-                        <div class="flex-fill">
+                <form div class="flex">
                     <table>
+                        <div class="flex-box"></div>
                         <tr>
-                            <td align="right"><b>Date:</b></td>
+                            <td align="right" id='date'><b>Date:</b></td>
                             <td align="left"><input type="date" id="date" /></td>
                         </tr>
                         <tr>
-                            <td align="right"><b>Dept/Division:</b></td>
+                            <td align="right" id='department'><b>Dept/Division:</b></td>
                             <td align="left"><input type="text" id="department" /></td>
                         </tr>
                         <tr>
-                            <td align="right"><b>Location:</b></td>
+                            <td align="right" id='location'><b>Location:</b></td>
                             <td align="left"><input type="text" id="location" /></td>
                         </tr>
                         <tr>
-                            <td align="right"><b>Resp. Ctr:</b></td>
+                            <td align="right" id='resp'><b>Resp. Ctr:</b></td>
                             <td align="left"><input type="text" id="resp" /></td>
                         </tr>
+                        
                     </table>
-                    <div class="flex-fill">
-                </form>
-         
+                    </div>
+<br><br><br><br>
+            <div class="flex">
+                    <table class='table' id='formTable'>
+                        <div class="flex-box"></div>
+                            <tr>
+                                <th>&emsp;&emsp;Asset Tag No.</th>
+                                <th>Manufacturer Serial No.</th>
+                                <th>&emsp;&emsp;&ensp;Description</th>
+                                <th>&emsp;&emsp;Cost/ Est. Cost</th>
+                                <th>&emsp;&thinsp;Method of Disposal</th>
+                                <th>&emsp;&emsp;RC to Credit</th>
+                                <th>&emsp;&emsp;&emsp;&emsp;Remarks</th>
+                            </tr>
+                    </table>
+            </div>
+ <br>
+            <div class="button">
+                <div class="flex-box"></div>         
+                <button type="button" class="btn btn-outline-primary" id='add' >+ Add New Asset</button> 
+            </div> 
+            <br>
+            <div class="button">
+                <div class="flex-box"></div>      
+                <button type="button" class="btn btn-outline-primary" id='save'>SAVE</button>
+                <button  class="btn btn-primary" type="submit" id='submit' >SUBMIT</button>
+                <button type="button" class="btn btn-secondary" onclick="window.print();return false;"/>EXPORT PDF</button>
+            </div> 
+            </form>
+            <div>
+                <span class ="phone">Property Control Officer: <span class = "line"></span></span> 
+                <span class ="date"> Department/Division Head: <span class = "line"></span></span>
+    
+            </div>
+          
+                
 
-			
-		
-    		
-			
-		</div>
-
+                   
+    </div>
 	</body>
 </html>
+
+<!-- Disposed through Greenchip ewaste & itad solutions -->

@@ -17,4 +17,111 @@ h1, h2{
     input{
         text-align: center;
     } 
+    input#date{
+        width: -webkit-fill-available;
+    }
+    nav{
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-bottom: 20px;
+	}
+    
+    th,td{
+		padding: 5px !important;
+		vertical-align: middle;
+	}
+    table{
+        font-size: 10pt;
+    }
+    
+
+    .flex {
+        display: flex;
+        flex: auto;
+        /* border: 1px solid red; */
+      }
+      .flex-box {
+        width: 25px;
+        /* height: 1000px; */
+        /* background: rgba(216, 143, 229, 0.499); */
+      }
+      .button{
+        display: flex;
+        /* display: inline !important; */
+        flex: auto;
+        height: 40px;
+        gap: 12px;
+        margin: 1px;
+      }
+
+      .btn-remove{
+		padding: 5px;
+		width: 25px;
+		height: 25px;
+		font-size: 0.7rem;
+		font-weight: bold;
+	}
+    textarea[remark]{
+        height: 50px;
+        width: 200px;
+        resize: none;
+        font-size: 12px !important;
+        text-align: center;
+    }
+    .phone, .date{
+        visibility: hidden;
+		display:none;
+    }
+
+   
+}
+@media print {
+        html, body {
+            height: 99%;    
+        }
+        input{
+            text-align: center;
+        }
+        input#date{
+            width: -webkit-fill-available;
+        } 
+		.navbar{
+			content-visibility: hidden;
+			display:none !important;
+			padding: 0px;
+		}
+		@page {
+			size: landscape;
+			margin: 10;
+			background-image: none;
+		}
+        button{
+			display: none !important;
+			
+		}
+        th,td{
+			font-size: 12.4px;
+            padding: 5px !important;
+		    vertical-align: middle;
+            
+		}
+        textarea[remark]{
+            height: 50px;
+            resize: none;
+            text-align: center;
+        }
+        tr {
+			display: table-header-group;
+			text-align: center;
+		}
+       
+        
+        .phone > .line, .date > .line {
+            display: inline-block;
+            border-bottom: 1px solid #000;
+            width: 100px; 
+            }
+        
+
+    
 }
