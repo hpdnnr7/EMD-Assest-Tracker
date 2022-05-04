@@ -20,6 +20,7 @@ h1, h2{
     input#date{
         width: -webkit-fill-available;
     }
+
     nav{
 		padding-left: 20px;
 		padding-right: 20px;
@@ -61,6 +62,16 @@ h1, h2{
 		font-size: 0.7rem;
 		font-weight: bold;
 	}
+
+    textarea[description]{
+        height: 50px;
+        width: 200px;
+        resize: none;
+        font-size: 12px !important;
+        text-align: center;
+    }
+
+
     textarea[remark]{
         height: 50px;
         width: 200px;
@@ -68,10 +79,11 @@ h1, h2{
         font-size: 12px !important;
         text-align: center;
     }
-    .phone, .date{
+    /* .pco, .dh{
         visibility: hidden;
 		display:none;
-    }
+        
+    } */
 
    
 }
@@ -79,9 +91,11 @@ h1, h2{
         html, body {
             height: 99%;    
         }
-        input{
+        input {
             text-align: center;
+            border:none;
         }
+    
         input#date{
             width: -webkit-fill-available;
         } 
@@ -100,26 +114,71 @@ h1, h2{
 			
 		}
         th,td{
-			font-size: 12.4px;
+			font-size: 10.5px;
             padding: 5px !important;
 		    vertical-align: middle;
             
 		}
         textarea[remark]{
-            height: 50px;
+            height: 40px;
+			width: 300px;
+            text-align: start;
             resize: none;
-            text-align: center;
+            text-align: center !important;
+            display: block;
+            border:none;
         }
+
+        textarea[description]{
+			border: none;
+			text-align: center;
+			height: 40px;
+			resize: none;
+			display:block;
+			width: 300px;
+		}
+
+
         tr {
 			display: table-header-group;
 			text-align: center;
+            page-break-inside: avoid;
 		}
-       
+/* Adds a break */
+        .break {
+            display: block;
+        }
+/* Disables all breaks */
+        br {
+            display:none;
+        }
+/* line properties         */
+        .pco{
+            font-size: 11px;
+            position: absolute;
+            bottom: 0px;
+            display: inline-block;
+            
+        }
+        .dh{
+            font-size: 11px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            display: inline-block;
+        }
         
-        .phone > .line, .date > .line {
+        .pco > .line {
             display: inline-block;
             border-bottom: 1px solid #000;
-            width: 100px; 
+            width: 250px; 
+            }
+
+        .dh > .line {
+            display: inline-block;
+            border-bottom: 1px solid #000;
+            width: 250px;
+            /* float: right; */
             }
         
 

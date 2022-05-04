@@ -67,6 +67,79 @@
       "proc_cd": null
     }
   ],
+  "disposals": [
+    {
+      "date": "",
+      "department": "",
+      "location": "",
+      "assets": [
+        {
+          "asset_tag_no": "0954"
+        }
+      ],
+      "status": "In-Progress",
+      "id": 1
+    },
+    {
+      "date": "",
+      "department": "",
+      "location": "",
+      "assets": [],
+      "status": "In-Progress",
+      "id": 2
+    },
+    {
+      "date": "",
+      "department": "",
+      "location": "",
+      "assets": [
+        {
+          "asset_tag_no": "0954"
+        },
+        {
+          "asset_tag_no": "0952"
+        },
+        {
+          "asset_tag_no": "0949"
+        },
+        {
+          "asset_tag_no": "0949"
+        },
+        {
+          "asset_tag_no": "0954"
+        },
+        {
+          "asset_tag_no": "0949"
+        },
+        {
+          "asset_tag_no": "0949"
+        },
+        {
+          "asset_tag_no": "0952"
+        },
+        {
+          "asset_tag_no": "0938"
+        },
+        {
+          "asset_tag_no": "0954"
+        },
+        {
+          "asset_tag_no": "0938"
+        },
+        {
+          "asset_tag_no": "0938"
+        },
+        {
+          "asset_tag_no": "0954"
+        },
+        {
+          "asset_tag_no": "0938"
+        }
+      ],
+      "status": "In-Progress",
+      "id": 3
+    }
+  ],
   "transfers": [
     {
       "id": 1,
@@ -247,6 +320,23 @@
       ],
       "status": "In-Progress",
       "id": 4
+    },
+    {
+      "transfer_out_date": "",
+      "transfer_out_department": "",
+      "transfer_out_dept_division_head": "",
+      "transfer_out_resp_ctr": "",
+      "transfer_out_location": "",
+      "transfer_out_property_control_office": "",
+      "transfer_in_date": "",
+      "transfer_in_department": "",
+      "transfer_in_dept_division_head": "",
+      "transfer_in_resp_ctr": "",
+      "transfer_in_location": "",
+      "transfer_in_property_control_office": "",
+      "assets": [],
+      "status": "In-Progress",
+      "id": 5
     }
   ]
 }

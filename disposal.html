@@ -27,34 +27,36 @@
                         <div class="flex-box"></div>
                         <tr>
                             <td align="right" id='date'><b>Date:</b></td>
-                            <td align="left"><input type="date" id="date" /></td>
+                            <td align="left"><input type="date" id="date" required/></td>
                         </tr>
                         <tr>
                             <td align="right" id='department'><b>Dept/Division:</b></td>
-                            <td align="left"><input type="text" id="department" /></td>
+                            <td align="left"><input type="text" id="department" required/></td>
                         </tr>
                         <tr>
                             <td align="right" id='location'><b>Location:</b></td>
-                            <td align="left"><input type="text" id="location" /></td>
+                            <td align="left"><input type="text" id="location" required/></td>
                         </tr>
                         <tr>
                             <td align="right" id='resp'><b>Resp. Ctr:</b></td>
-                            <td align="left"><input type="text" id="resp" /></td>
+                            <td align="left"><input type="text" id="resp" required/></td>
                         </tr>
+
+                        <br class="break">
                         
                     </table>
                     </div>
 <br><br><br><br>
             <div class="flex">
-                    <table class='table' id='formTable'>
-                        <div class="flex-box"></div>
+                    <table class='table' id='formTable' >
+                        <div class="flex-box"> <br class="break"> </div>
                             <tr>
                                 <th>&emsp;&emsp;Asset Tag No.</th>
                                 <th>Manufacturer Serial No.</th>
-                                <th>&emsp;&emsp;&ensp;Description</th>
-                                <th>&emsp;&emsp;Cost/ Est. Cost</th>
-                                <th>&emsp;&thinsp;Method of Disposal</th>
-                                <th>&emsp;&emsp;RC to Credit</th>
+                                <th>&emsp;&emsp;Description</th>
+                                <th>Cost/ Est. Cost</th>
+                                <th>Method of Disposal</th>
+                                <th>RC to Credit</th>
                                 <th>&emsp;&emsp;&emsp;&emsp;Remarks</th>
                             </tr>
                     </table>
@@ -72,17 +74,20 @@
                 <button type="button" class="btn btn-secondary" onclick="window.print();return false;"/>EXPORT PDF</button>
             </div> 
             </form>
-            <div>
-                <span class ="phone">Property Control Officer: <span class = "line"></span></span> 
-                <span class ="date"> Department/Division Head: <span class = "line"></span></span>
-    
-            </div>
+            <div> <br class="break" class="break"> </div>
+           
           
                 
 
                    
     </div>
+   
 	</body>
+    <div>
+        <span class ="pco">Property Control Officer: <span  class = "line"></span></span> 
+        <span class ="dh"> Department/Division Head: <span  class = "line"></span></span>
+
+    </div>
 </html>
 
 <!-- Disposed through Greenchip ewaste & itad solutions -->

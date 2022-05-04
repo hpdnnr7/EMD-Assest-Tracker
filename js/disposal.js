@@ -2,7 +2,7 @@ const getAssetInfo = (assetTag, index) => {
     // if (assetTag.length >= 4){
 
     // get the table row that this input is in
-    $.get("http://localhost:3000/disposals/" + assetTag , (data) => {
+    $.get("http://localhost:3000/assets/" + assetTag , (data) => {
 		
       // find the `.description` element and set it's value 
       if (data){
@@ -36,7 +36,7 @@ $('document').ready(() => {
     const id = new URLSearchParams(window.location.search).get('id');
     // If we have ID in the URL
     if (id){
-        $.get(`http://localhost:3000/transfers/${id}`)
+        $.get(`http://localhost:3000/disposals/${id}`)
         .done(data => {
             CURRENT_ID = id;
             CURRENT_STATUS = data.status;
@@ -64,18 +64,18 @@ $('document').ready(() => {
    
     const setInitialFields = 
 		data =>{
-			$(date).val(data.date);
-			$(department).val(data.department);
-			$(location).val(data.location);
-			$(resp_ctr).val(data.resp_ctr);
+			$('#date').val(data.date);
+			$('#department').val(data.department);
+			$('#location').val(data.location);
+			$('#resp_ctr').val(data.resp_ctr);
     };
 
     const getInfo = () =>{
         let data = {
-            date: $(date).val(),
-            department: $(department).val(),
-            location: $(location).val(),
-			resp_ctr:$(resp_ctr).val(),
+            date: $('#date').val(),
+            department: $('#department').val(),
+            location: $('#location').val(),
+			resp_ctr:$('#resp_ctr').val(),
         };
 
 
@@ -92,16 +92,9 @@ $('document').ready(() => {
             // Store all Info from this row
             let assetInfo = {
                 asset_tag_no: $(`#asset_tag_no${i}`).val(),
-                manufacturer: $(`#manufacturer_serial_no${i}`).val(),
-                descriptions: $(`#description${i}`).val(),
-                costs: $(`#cost${i}`).val(),
-                method_of_disposal: $(`#method_of_disposal${i}`).val(),
-				rc: $(`#rc${i}`).val(),
-                remarks: $(`#remarks${i}`).val(),
-
             }
 
-            if (assetInfo.asset_tag_no && assetInfo.manufacturer && assetInfo.descriptions && assetInfo.costs && assetInfo.method_of_disposal && assetInfo.rc  != ''){  
+            if (assetInfo.asset_tag_no){  
                 // Add Info to array
                 assets.push(assetInfo);
                     
@@ -161,7 +154,7 @@ $('document').ready(() => {
         onkeyup = "getAssetInfo(this.value,${count})";
         bottom required /></td> 
                         <td><input id='manufacturer_serial_no${count}' type='text' bottom required/></td>
-                        <td><input id='description${count}' type='text'/></td>
+                        <td><textarea id='description${count}' type='text' description <textarea/></td>
                         <td><input id='cost${count}' type='value'/></td>
                         <td><input id='po_no${count}' type='text' /></td>
                         <td><input id='rc_to_credit${count}' type='text'/></td>
