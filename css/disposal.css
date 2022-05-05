@@ -79,17 +79,18 @@ h1, h2{
         font-size: 12px !important;
         text-align: center;
     }
-    /* .pco, .dh{
-        visibility: hidden;
+    .pco, .dh{
+        visibility: collapse;
 		display:none;
         
-    } */
+    }
 
    
 }
 @media print {
         html, body {
-            height: 99%;    
+            height: 99%;   
+            position: relative; 
         }
         input {
             text-align: center;
@@ -100,6 +101,7 @@ h1, h2{
             width: -webkit-fill-available;
         } 
 		.navbar{
+            visibility: collapse;
 			content-visibility: hidden;
 			display:none !important;
 			padding: 0px;
@@ -117,7 +119,8 @@ h1, h2{
 			font-size: 10.5px;
             padding: 5px !important;
 		    vertical-align: middle;
-            
+            page-break-after:auto; 
+            page-break-inside:avoid;
 		}
         textarea[remark]{
             height: 40px;
@@ -143,6 +146,7 @@ h1, h2{
 			display: table-header-group;
 			text-align: center;
             page-break-inside: avoid;
+            
 		}
 /* Adds a break */
         .break {
@@ -157,30 +161,45 @@ h1, h2{
             font-size: 11px;
             position: absolute;
             bottom: 0px;
-            display: inline-block;
+            /* display: inline-block; */
             
+            /* page-break-inside: auto; */
         }
         .dh{
             font-size: 11px;
-            position: fixed;
+            position: absolute;
             bottom: 0;
             right: 0;
-            display: inline-block;
+            /* display: inline-block; */
+            /* page-break-inside: auto; */
         }
         
         .pco > .line {
             display: inline-block;
             border-bottom: 1px solid #000;
             width: 250px; 
+            /* position: fixed;
+            bottom: 0;
+            page-break-inside: auto; */
             }
 
         .dh > .line {
             display: inline-block;
             border-bottom: 1px solid #000;
             width: 250px;
-            /* float: right; */
+            /* position: fixed;
+            bottom: 0;
+            page-break-inside: auto; */
             }
         
-
-    
+            .pco > .dh > .last-page {
+                page: last_page;
+                page-break-before: always; /* Use if your last page is blank, else omit. */
+            }
+            
+            @page last_page {
+                @bottom-right {
+                    content: "last-page";
+                }
+            }
 }
