@@ -2,13 +2,14 @@ const getAssetInfo = (assetTag, index) => {
     // if (assetTag.length >= 4){
 
     // get the table row that this input is in
-    $.get("http://localhost:3000/assets/" + assetTag , (data) => {
+    $.get("https://10.50.78.193/EMDAssetTracker/api/assets/" + assetTag , (data) => {
 		
+		data = JSON.parse(data);
       // find the `.description` element and set it's value 
       if (data){
         $(`#manufacturer_serial_no${index}`).val(data.serial_no);
         $(`#description${index}`).val(data.description);
-        $(`#cost${index}`).val(data.cost);
+        $(`#cost${index}`).val('$' + (Math.floor(data.cost * 100) / 100).toFixed(2));
         $(`#po_no${index}`).val(data.po_no);
       }
 
@@ -41,7 +42,7 @@ $('document').ready(() => {
     const id = new URLSearchParams(window.location.search).get('id');
     // If we have ID in the URL
     if (id){
-        $.get(`http://localhost:3000/transfers/${id}`)
+        $.get(`http://localhost:3004/transfers/${id}`)
         .done(data => {
             CURRENT_ID = id;
             CURRENT_STATUS = data.status;
@@ -151,7 +152,7 @@ $('document').ready(() => {
         if (!CURRENT_ID){
             $.ajax({
                 type: "POST",
-                url: "http://localhost:3000/transfers",
+                url: "http://localhost:3004/transfers",
                 data: JSON.stringify(info),
                 contentType: "application/json"
             })
@@ -165,7 +166,7 @@ $('document').ready(() => {
         else{
             $.ajax({
                 type: "PATCH",
-                url: `http://localhost:3000/transfers/${CURRENT_ID}`,
+                url: `http://localhost:3004/transfers/${CURRENT_ID}`,
                 data: JSON.stringify(info),
                 contentType: "application/json"
             })
@@ -196,7 +197,7 @@ $('document').ready(() => {
         <td><input id='cost${count}' type='value' bottom require readonly/></td>
         <td><input id='po_no${count}' type='text' bottom require readonly/></td>
         <td><textarea id='remarks${count}' type='text' bottom remarks></textarea></td>
-        <td><button type="button" index="${count}" class="btn btn-danger btn-remove">X</button></td>
+        <td class="screen-only"><button type="button" index="${count}" class="btn btn-danger btn-remove">X</button></td>
         </form>
         </tr>
         `;
@@ -215,6 +216,9 @@ $('document').ready(() => {
     $('#add').click(() => {
         addRow();
         //oninvalid="this.setCustomValidity('Asset Tag Number is Invalid')"
+		
+		// Scroll Document to Bottom
+		window.scrollTo(0, document.body.scrollHeight);
         
     });
 

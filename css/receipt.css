@@ -1,0 +1,258 @@
+@import 'global.css';
+
+.header{
+	margin-top: 20px;
+  	text-align: center;
+  	margin-bottom: 80px;
+}
+
+h1{
+  	font-size: 1rem;
+	font-weight: bold;
+}
+
+table{
+	font-size: 10pt;
+}
+
+#add{
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+	width: 250px;
+}
+#add:hover{
+	opacity: 0.6;
+	cursor: pointer;
+}
+#add i{
+	padding-right: 10px;
+	font-size: 2rem;
+	color: transparent;
+	background: var(--main-gradient);
+	background-clip: text;
+	-webkit-background-clip: text; 
+
+ }
+
+ .btn{
+	border-radius: 50px;
+	background:  var(--main-gradient);
+	border: none;
+	padding: 4px;
+	width: 150px; 
+ }
+ 
+ .btn:hover{
+	opacity: 0.6;
+ }
+ 
+ .buttons{
+	float: right;
+ }
+ 
+ .table>:not(:first-child){
+	border-top: none;
+ }
+ #submit{
+	border: none;
+	border-radius: 30px;
+	background: var(--main-gradient);
+ }
+#save{
+	color: #29385f;
+	font-weight: bold;
+	padding: 4px;
+	background: var(--main-gradient);
+	background-clip: text;
+	-webkit-background-clip: text; 
+	border: 1px soild transparent;
+	border-radius: 30px;
+	background-image: linear-gradient(#f8f8ff, #f8f8ff), 
+					var(--main-gradient);
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+}
+
+.asset-form{
+	background: white;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+	padding: 20px;
+	box-shadow: 0px 0px 10px lightgrey
+}
+
+.asset-form label{
+	font-weight: bold;
+}
+
+.asset-form input{
+	width: 100%;
+	margin-bottom: 20px;
+	border-style: solid;
+	border-color: lightgray;
+	border-radius: 10px;
+	border-width: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.asset-form select{
+	margin-bottom: 20px;
+	border-style: solid;
+	border-color: lightgray;
+	border-radius: 10px;
+	border-width: 1px;
+	width: 200px;
+	
+}
+
+.inline-fields{
+	display: flex;
+	font-weight: bold;
+}
+.inline-fields>div:not(:last-child){
+	margin-right: 10px;
+}
+.inline-fields input{
+	width: 120px;
+}
+
+.location-field select{
+	
+}
+
+thead{
+	position: sticky;
+    z-index: 1;
+    top: 0;
+    background: #f8f8ff;
+}
+
+thead>tr{
+	
+	box-shadow: 0px 2px 0px currentColor;
+}
+
+
+
+td{
+	position: relative;
+}
+.dollar-sign{		
+	position: absolute;
+    top: 14px;
+    left: 5px;
+    font-weight: bold;
+}
+
+.price-input{
+	padding-left: 15px;
+}
+
+.remove-button {
+    color: white;
+    background: red;
+    border: none;
+    border-radius: 5px;
+}
+
+.remove-button:hover{
+	cursor: pointer;
+	opacity: 0.5;
+}
+  /* on-screen styles */
+
+
+	.wrapper{
+		width: 90%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	
+	.table-wrapper{
+		max-height: 500px;
+		overflow-y: scroll;
+	}
+	input{
+		width: 150px;
+		outline: none;
+		border-radius: 5px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		border: 1px solid lightgray;
+		height: 1.5rem;
+	}
+	select{
+		border: 1px solid lightgray;
+		border-radius: 5px;
+		height: 1.5rem;
+	}
+	nav{
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-bottom: 20px;
+	}
+	th,td{
+		padding: 1px !important;
+		vertical-align: middle;
+	}
+	th{
+	font-weight: bold;
+	}
+	.bottom{
+		display: none;
+		visibility: hidden;
+	}
+	.btn-remove{
+		padding: 5px;
+		width: 25px;
+		height: 25px;
+		font-size: 0.7rem;
+		font-weight: bold;
+	}
+	.print-only{
+		display: none;
+		visibility: hidden;
+	}
+
+
+
+/* print styles */
+@media print {
+
+	.wrapper{
+		width: 100%;
+	}
+
+	button{
+		visibility: hidden;
+	}
+	input{
+		border: none;
+		width: 100px;
+	}
+	table{
+		border: 3px solid black !important;
+		font-size: 10pt;
+	}
+	tr,td,th{
+		border: 1px solid black;
+	}
+	th,td{
+		padding: 1px !important;
+		vertical-align: middle;
+	}
+	nav{
+		display: none !important;
+		visibility: hidden;
+	}
+	.bottom{
+		font-size: 10pt;
+		display: initial;
+	}
+	.bottom p{
+		margin: 0;
+	}
+
+}

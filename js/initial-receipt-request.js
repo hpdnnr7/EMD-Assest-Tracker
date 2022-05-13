@@ -4,10 +4,34 @@ $('document').ready(() => {
 	const table = $("#formTable tbody");
 	let count = 1;
 
+	const addTableListeners = () => {
+		
+		// Auto Add New Row when Tab is pressed on Last Input
+		$('[id*="proc_"]').keydown(function(key){
+			if (this.id == `proc_${count}` && key.which == 9) {
+				key.preventDefault();
+				$('#add').click();
+			}
+		});
+
+		// Add Handler to Remove New Asset
+		$('.remove-button').click(function(){
+			let index = $(this).attr('index');
+			$(`tr[index='${index}'`).remove();
+		});	
+	}
+
+		
 	$('#add').click(() => {
+		
+		// Increment Row Index
 		count++;
+		
+		
+		// Add New Row with Increment
 		const newRow = `
-		<tr index="${count}">
+			<tr index='${count}'>
+					<td><button class='remove-button' index='${count}'>🗙</button></td>
 					<td><input id='description_${count}' type='text'/></td>
 					<td><input id='manufacturer_${count}' type='text'/></td>
 					<td><input id='serial_no_${count}' type='text'/></td>
@@ -30,22 +54,26 @@ $('document').ready(() => {
 					</td>
 					<td><input id='floor_${count}' type='text'/></td>
 					<td><input id="room_${count}" type='text'/></td>
-					<td>$<input id="cost_${count}" type='number'/></td>
+					<td><span class='dollar-sign'>$</span><input id="cost_${count}" type='number' class='price-input'/></td>
 					<td><input id='purchase_${count}' type='date'/></td>
 					<td><input id='po_${count}' type='text'/></td>
 					<td><input id='proc_${count}' type='text'/></td>
-					<td><button type="button" index="${count}" class="btn btn-danger btn-remove">X</button></td>
 				</tr>
 		`;
 
 		table.append(newRow);
-
-		// Handler to Remove New Asset
-		$('.btn-remove').click(function(){
-			let index = $(this).attr('index');
-			$(`tr[index='${index}'`).remove();
-		});
+		
+		// Scroll Table to Bottom and Autofocus Input
+		$('.table-wrapper').scrollTop($('.table-wrapper').height());
+		$(`#description_${count}`).focus();
+		
+		addTableListeners();
+		
 	});
+
+
+	addTableListeners();
+	
 
 	
 	// Handler to Submit Data

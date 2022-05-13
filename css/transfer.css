@@ -1,0 +1,296 @@
+@import 'global.css';
+
+.header{
+    text-align: center;
+    margin-bottom: 50px;
+	font-weight: bold;
+}
+p>b{
+	width: 250px;
+}
+p.container {
+    display: flex;
+    gap: 20px;
+}
+.transfer-data input,.transfer-data textarea{
+	flex-grow: 1;
+	text-align: left !important;
+}
+h1, h2{
+    font-size: 1rem;
+}
+
+table{
+    font-size: 10pt;
+}
+
+input, textarea {
+    width: 100%;
+    margin-bottom: 10px;
+	resize: none;
+}
+
+.money{
+	position: relative;
+}
+.money::before{
+	position: absolute;
+	content: '$';
+	font-weight: bold;
+	top: 22px;
+	left: 10px;
+	
+}
+@media screen {
+	.print-only{
+		display: none;
+	}
+	.header>h1{
+		font-weight: bold;
+	}
+	.wrapper{
+		width: 90%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	nav{
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-bottom: 20px;
+	}
+	th,td{
+		padding: 5px !important;
+		vertical-align: middle;
+		font-weight: bold;
+	}
+	
+	/* Keeps table text centered like on old sheet  */
+	input[bottom]{
+		text-align: center;
+	}
+
+	textarea[bottom] {
+		text-align: center;
+	}
+
+	.btn-remove{
+		padding: 5px;
+		width: 25px;
+		height: 25px;
+		font-size: 0.7rem;
+		font-weight: bold;
+	}
+
+	textarea[top]{
+		float: right;
+		width: 150px;	
+	}
+	
+	.note{
+		visibility: hidden;
+		display:none;
+	}
+
+
+	
+}
+@media print {
+	html, body {
+        height: 99%;    
+    }
+	
+	.screen-only{
+		display: none;
+	}
+	.navbar{
+		content-visibility: hidden;
+		display:none !important;
+		padding: 0px;
+	}
+	.transfer-data{
+		font-size: 12px;
+	}
+	p.container {
+		font-size: 12px;
+		margin-bottom: 10px;
+	}
+	input,textarea{
+		border: none;
+		border-bottom: 1px solid black;
+	}
+	
+	table input, table textarea{
+		border-bottom: none;
+	}
+	
+	table,td,thead,th,tr,tbody{
+		border: 1px solid black;
+	}
+	@page {
+		size: landscape;
+		margin: 10;
+		background-image: none;
+	}
+	.align{
+		text-align: justify-content-center;
+	}
+	.header>*{
+		font-weight: bold;
+		margin-bottom: 15px;
+		font-size: 14px;
+		margin-bottom: 5px;
+	}
+
+	tr {
+		display: table-header-group;
+		text-align: center;
+	}
+
+	th{
+		font-size: 12.4px;
+	}
+	
+	.break{
+		display:block;
+	}
+	h2 {
+		text-align: center;
+		font-size: 1rem;
+	}
+
+	tr {
+		page-break-inside: avoid;
+		}
+
+	div br {
+	display: none;
+	}
+
+	p {
+	margin-bottom: 0;
+	}
+	
+	.flex-fill div {
+	display: grid;
+	}
+
+	.b{
+		margin-bottom: 0;
+	}
+	input {
+		
+		width: -webkit-fill-available !important;
+		overflow: hidden;
+	}
+
+	.container {
+		display: flex;
+	} 
+
+	/* Keeps table text centered like on old sheet  */
+	input[bottom]{
+		text-align: center;
+		
+	}
+	input[top]{
+		width: 150px;
+		text-align: left;
+		display:inline-block;
+	}
+
+
+	/* Keeps top info centered like on old sheet  */
+	textarea {
+		margin: 0;
+		padding: 0;
+		
+		overflow: hidden;
+	}
+
+	textarea[division] {
+		overflow: hidden;
+		
+		margin: 0;
+		padding: 0;
+		margin-bottom: 0;
+		white-space: nowrap;
+		resize: none;
+		/* font-size: 13px; */
+		word-break: break-word;
+	}
+
+	textarea[location]{
+		
+		font-size: 15px;
+		height: 50px;
+		resize: none;
+		margin:0; 
+		padding:0; 
+		margin-bottom: 0;
+		display:block;
+	}
+
+	textarea[description]{
+		
+		text-align: start;
+		height: 40px;
+		resize: none;
+		display:block;
+		width: 300px;
+	}
+
+	textarea[remarks]{
+		
+		text-align: start;
+		height: 40px;
+		width: 300px;
+		resize: none;
+		display:block;
+	}
+
+	textarea[bottom] {
+		text-align: center;
+	}
+
+	td:last-child {
+		visibility: hidden;
+	}
+	button{
+		display: none !important;
+		
+	}
+	.note{
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
+		visibility: show;
+		font-size: 12px;
+		/* margin: -4px;
+		padding: -100%;
+		height: 0;
+		line-height: 0;
+		clear: both;
+		page-break-inside: avoid;  */
+		text-align: center;
+		
+	}
+	
+	table{
+		margin-bottom: 0 !important;
+	}
+	}
+
+	/*
+	on Parent container, use:
+		display: flex
+		justify-content: flex-start
+		align-items: flex-start
+
+	on Input, use:
+		flex-grow: 1
+		margin-left: 30px
+
+
+	Also remove <br>'s from <b> tags
+
+	*/

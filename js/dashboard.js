@@ -2,7 +2,7 @@ $('document').ready(() => {
 	
 	// Retrieve all User's Requests
 	const openRequestsTable = $('#open-requests-table');
-	$.get('http://localhost:3000/transfers')
+	$.get('http://localhost:3004/transfers')
 	.done(data => {
 		let rows = data.map(x=>{
 			console.log(x);

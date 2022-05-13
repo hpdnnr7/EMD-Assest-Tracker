@@ -1,3 +1,5 @@
+
+@import 'global.css';
 .header{
     text-align: center;
     margin-bottom: 50px;
@@ -14,6 +16,11 @@ h1, h2{
 
 
 @media screen {
+    table,tr>.top_info{
+        border-bottom: 1.5px solid rgb(0, 0, 0);
+        width: 180px;
+    }
+
     input{
         text-align: center;
     } 
@@ -197,9 +204,21 @@ h1, h2{
                 page-break-before: always; /* Use if your last page is blank, else omit. */
             }
             
-            @page last_page {
-                @bottom-right {
-                    content: "last-page";
-                }
+            table{
+                border-bottom: 1.5px solid rgb(0, 0, 0);
+                width: 180px;
             }
+            .show{
+                border: 1px solid black;
+            }
+            td:last-child {
+                visibility: hidden;
+            }
+
+            /* table input, table top_info{
+                border-bottom: none;
+            } */
+
+            
+
 }
