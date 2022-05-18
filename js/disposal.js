@@ -159,7 +159,7 @@ $('document').ready(() => {
                         <td class="show"><input id='po_no${count}' type='text' /></td>
                         <td class="show"><input id='rc_to_credit${count}' type='text'/></td>
                         <td class="show"><textarea id='remark${count}' type='text' remark <textarea/></td>
-                        <td class="show"><button type="button" index="${count}" class="btn btn-danger btn-remove">X</button></td>
+                        <td class="hide"><button type="button" index="${count}" class="btn btn-danger btn-remove">X</button></td>
         </form>
         </tr>
         `;
