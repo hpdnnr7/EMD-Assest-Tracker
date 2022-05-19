@@ -3,9 +3,11 @@
 // so myFunc("EMD-5002") returns 5002 (as an integer)
 
 const getNumber = id => {
-    
+  var num = id.replace(/[^0-9]/g,'');
+  console.log(num())
 
 }
+console.log(getNumber('EMD-5002'));
 $('document').ready(() => {
     $.get("http://localhost:3000/assets/", (data) => {
 		
@@ -17,7 +19,7 @@ $('document').ready(() => {
       //console.log(data)
     })
 
-    console.log(getNumber('EMD-5002'));
+    console.log(num(getNumber('EMD-5002')));
 
     
     //   // Handler to Save Data   
